@@ -1,0 +1,64 @@
+$(document).ready(function(){
+
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() >= 100) {
+            $('#header').addClass('scrolled');
+        } else {
+            $('#header').removeClass('scrolled');
+        }
+    });
+
+    function updateMenu() {
+        if ($(window).width() <= 800) {
+            $('#nav').addClass('sideMenu');
+            $('#nav.sideMenu ul li a').addClass('btnMenu');
+        } else {
+            $('#nav').removeClass('sideMenu');
+            $('#nav ul li a').removeClass('btnMenu');
+            $('.drawer-overlay').removeClass('show');
+        }
+    }
+
+    // Run on page load
+    updateMenu();
+
+    // Run on window resize
+    $(window).on('resize', updateMenu);
+
+    $('#menuBurger').on('click', function () {
+        $("#header").css("overflow", "inherit");
+        $('.sideMenu').addClass('show');
+        $('.drawer-overlay').addClass('show');
+    });
+    $('#menuClose').on('click', function () {
+        $("#header").css("overflow", "hidden");
+        $('.sideMenu').removeClass('show');
+        $('.drawer-overlay').removeClass('show');
+    });
+
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin: 16,
+        responsiveClass:true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        navText: ['<button class="glass-play-btn"><span class="play-icon">&#9664;</span></button>',
+                    '<button class="glass-play-btn"><span class="play-icon">&#9654;</span></button>'
+                ],
+        dots: true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            600:{
+                items:2,
+            },
+            1000:{
+                items:3,
+            }
+        }
+    })
+
+});

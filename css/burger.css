@@ -1,0 +1,79 @@
+/* SIDE MENU */
+.drawer-overlay {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    background: rgba(5, 8, 20, 0.9);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+}
+.drawer-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger {
+    aspect-ratio: 1/1;
+    width: 3rem;
+    display: none;
+    place-items: center;
+}
+#menuBurger {
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#menuClose {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#menuBurger:hover, #menuClose:hover {
+    filter: drop-shadow(0 0 6px var(--glow-cyan)) drop-shadow(0 0 20px var(--glow-cyan));
+}
+#menuBurger:hover path, #menuClose:hover path {
+    stroke: var(--glow-cyan);
+}
+
+.sideMenu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: -100%; /* hidden on right */
+    width: 260px;
+    height: 100dvh;
+    background: #111;
+    padding: 5rem 2rem;
+    z-index: -1;
+    transition: right 280ms cubic-bezier(0.2, 0, 0, 1);
+}
+.sideMenu.show {
+    right: 0;
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+}
+
+#nav.sideMenu ul {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#nav.sideMenu ul li {
+    width: 100%;
+}
+
+#nav.sideMenu ul li a {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
