@@ -136,16 +136,16 @@ h2 {
 
 .hdr {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin-bottom: 3rem;
 }
 .hdr::before {
   content: '';
   height: 100%;
   position: absolute;
-  width: 7px;
+  width: 5px;
   left: 0;
-  background: #fff;
+  background: linear-gradient(to bottom, #4fc3f7, #7c4dff);
   top: 50%;
   transform: translateY(-50%);
   box-shadow: 0 0 20px var(--glow-cyan);
@@ -345,7 +345,7 @@ p {
 .aboutme_con .aboutme_info section ul li {
   font-size: 0.8rem;
   padding: .5rem 1rem;
-  background: rgba(255,255,255,.05);
+  background: rgba(0,0,0,.2);
   width: fit-content;
   border-radius: 5rem;
   border: 1px solid var(--glass-border);
@@ -376,8 +376,49 @@ p {
   margin-bottom: 2rem;
 }
 
+/* WHY HIRE ME */
+.hireMe_con h2.hdr {
+  margin-bottom: 1rem;
+}
 
-/* work Experience */
+.hireMe_con .txt-intro {
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--glass-border);
+}
+.why-card:hover {
+  box-shadow: rgba(255,255,255,.08) 0 0 10px;
+  transform: translateY(-6px);
+  background: rgba(0,0,0,.15);
+}
+
+.why-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.why-card p {
+  color: var(--color-dim);
+  margin: 0;
+}
+
+
+/* WORK EXPERIENCE */
 .company-info {
   position: relative;
   padding-left: 5.5rem;
@@ -524,17 +565,18 @@ p {
   color: var(--stone);
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  height: 0;
-  padding: 0;
- transition: .3s ease; 
-}
-.bottom_con .owl-carousel .item:hover section {
-  padding: 1rem;
+  padding: 2rem 1rem;
   height: auto;
+ transition: .3s ease; 
 }
 
 .bottom_con .owl-carousel .item section h3 {
   margin: 0;
+}
+
+.bottom_con .item section .hide_con {
+  display: none;
+  margin-top: 1.2rem;
 }
 
 .webcard .owl-nav {
@@ -621,6 +663,14 @@ p {
 .info_con {
   max-width: 520px;
   width: 50%;
+}
+
+.info_con h2 {
+  margin-bottom: 1rem;
+}
+
+.info_con .res24 {
+  margin-top: 1.2rem;
 }
 
 .footer_top_con ul {
