@@ -61,4 +61,31 @@ $(document).ready(function(){
         }
     })
 
+    const sections = document.querySelectorAll(".secpad");
+    const menuLinks = document.querySelectorAll("#nav ul li a");
+
+    const observer = new IntersectionObserver(
+        entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const id = entry.target.id;
+
+            menuLinks.forEach(link => {
+                link.classList.toggle(
+                "is-active",
+                link.getAttribute("href") === `#${id}`
+                );
+            });
+            }
+        });
+        },
+        {
+        threshold: 0.7
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    observer.observe(target);
+
 });

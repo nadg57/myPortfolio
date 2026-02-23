@@ -199,10 +199,11 @@ p {
   text-align: center;
 }
 
-.btn:hover, .btnMenu:hover {
+.btn:hover, .btnMenu:hover, .btnMenu.is-active {
   background: white;
-  color: black;
+  color: black !important;
   box-shadow: 0 0 20px var(--glow-cyan);
+  text-shadow: none !important;
 }
 
 /* HEADER */  
@@ -259,7 +260,7 @@ p {
   transition: 0.3s ease;
   line-height: 100%;
 }
-#nav ul li a:hover {
+#nav ul li a:hover, #nav ul li a.is-active {
   color: var(--glow-cyan);
   filter: none !important;
   text-shadow: 0 0 8px rgba(56, 189, 248, 0.6), 0 0 16px rgba(56, 189, 248, 0.4), 0 0 32px rgba(168, 85, 247, 0.35);
@@ -273,7 +274,7 @@ p {
 /*  ABOUT ME */
 .aboutme_con {
   display: flex;
-  gap: 2rem;
+  gap: 3rem 2rem;
 }
 
 .aboutme_con .aboutme_info {
@@ -341,9 +342,23 @@ p {
    box-shadow: 0 0 8px rgba(0, 180, 255, 0.6), 0 0 16px rgba(0, 180, 255, 0.5), 0 0 32px rgba(0, 180, 255, 0.4);
 }
 
+.aboutme_con .aboutme_info section ul li {
+  font-size: 0.8rem;
+  padding: .5rem 1rem;
+  background: rgba(255,255,255,.05);
+  width: fit-content;
+  border-radius: 5rem;
+  border: 1px solid var(--glass-border);
+  margin-top: 1.2rem;
+}
+
 .aboutme_con .aboutme_info a.btn {
   margin-top: 1rem;
-  padding: 0.4rem 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg,#fff,#e0e0e0);
+  color: #000;
+  font-size: 1.1rem;
+  font-family: var(--sec-font);
 }
 .aboutme_con .aboutme_info a.btn i {
   margin-right: 0.3rem;
@@ -439,6 +454,12 @@ p {
 
 .techSkill .glow-git {box-shadow: inset 0 0 5px #F05033;}
 .techSkill .glow-git img {filter: drop-shadow(0 0 3px #F05033);}
+
+.techSkill .glow-mysql {box-shadow: inset 0 0 5px #00758F;}
+.techSkill .glow-mysql img {filter: drop-shadow(0 0 3px #00758F);}
+
+.techSkill .glow-react {box-shadow: inset 0 0 5px #38BDF8;}
+.techSkill .glow-react img {filter: drop-shadow(0 0 3px #38BDF8);}
 
 .techSkill li section {
   flex: 1;
