@@ -57,9 +57,9 @@ $(document).ready(function(){
         margin: 16,
         responsiveClass:true,
         nav: true,
-        /* autoplay: true,
+        autoplay: true,
         autoplayTimeout: 3000,
-        autoplayHoverPause: true, */
+        autoplayHoverPause: true,
         navText: ['<button class="glass-play-btn"><span class="play-icon">&#9664;</span></button>',
                     '<button class="glass-play-btn"><span class="play-icon">&#9654;</span></button>'
                 ],
@@ -67,6 +67,11 @@ $(document).ready(function(){
         responsive:{
             0:{
                 items:1,
+                center: true, 
+            },
+            450:{
+                items:1.5,
+                center: true, 
             },
             600:{
                 items:2,

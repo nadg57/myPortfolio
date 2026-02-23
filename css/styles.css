@@ -55,16 +55,18 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 
-  background-color: #020617;
+  background: linear-gradient( 180deg, #020617 0%, #050b1f 100% );
+
+  /* background-color: #020617;
 
   background-image: 
     radial-gradient(at 0% 0%, hsla(220, 100%, 15%, 1) 0px, transparent 55%), 
     radial-gradient(at 100% 0%, hsla(260, 80%, 20%, 1) 0px, transparent 55%), 
     radial-gradient(at 50% 100%, hsla(190, 100%, 15%, 1) 0px, transparent 55%),
-    radial-gradient(at 80% 50%, hsla(240, 60%, 15%, 1) 0px, transparent 55%);
+    radial-gradient(at 80% 50%, hsla(240, 60%, 15%, 1) 0px, transparent 55%); 
 
   background-size: 180% 180%;
-  animation: aurora-flow 20s ease-in-out infinite alternate;
+  animation: aurora-flow 20s ease-in-out infinite alternate; */
 }
 
 /* Disable fixed backgrounds on mobile */
@@ -547,7 +549,7 @@ p {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  
+  border: 1px solid var(--glass-border);
 }
 
 .bottom_con .owl-carousel .item img {

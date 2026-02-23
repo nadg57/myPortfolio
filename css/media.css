@@ -17,6 +17,9 @@
     .glass-container {width: 100%;  max-width: 100%;}
     .info_con {width: 100%;  max-width: 100%;}
 
+    .bottom_con .webcard {padding: 0;}
+    .webcard .owl-nav {position: inherit;   transform: none;   margin-top: 1.2rem;   justify-content: center;   gap: 2rem;}
+
     .divider {display: none;}
 }
 
@@ -35,7 +38,4 @@
     .aboutme_info section {padding: 0;}
     .aboutme_con .aboutme_info img {position: inherit; margin-bottom: 1.5rem;}
     .techSkill li {width: 100%;}
-
-    .bottom_con .webcard {padding: 0;}
-    .webcard .owl-nav {position: inherit;   transform: none;   margin-top: 1.2rem;   justify-content: center;   gap: 2rem;}
 }
