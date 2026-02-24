@@ -1,13 +1,5 @@
 $(document).ready(function(){
 
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() >= 100) {
-            $('#header').addClass('scrolled');
-        } else {
-            $('#header').removeClass('scrolled');
-        }
-    });
-
     function updateMenu() {
         if ($(window).width() <= 800) {
             $('#nav').addClass('sideMenu');
