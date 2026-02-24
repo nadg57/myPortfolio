@@ -36,52 +36,6 @@ $(document).ready(function(){
         $('.drawer-overlay').removeClass('show');
     });
 
-    $('.bottom_con').on('mouseenter', '.item', function () {
-        const $hideCon = $(this).find('.hide_con');
-
-        if ($hideCon.is(':hidden')) {
-            $hideCon.stop(true, true).fadeIn(500);
-        }
-    });
-
-    $('.bottom_con').on('mouseleave', '.item', function () {
-        const $hideCon = $(this).find('.hide_con');
-
-        if ($hideCon.is(':visible')) {
-            $hideCon.stop(true, true).fadeOut(300);
-        }
-    });
-
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin: 16,
-        responsiveClass:true,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        navText: ['<button class="glass-play-btn"><span class="play-icon">&#9664;</span></button>',
-                    '<button class="glass-play-btn"><span class="play-icon">&#9654;</span></button>'
-                ],
-        dots: true,
-        responsive:{
-            0:{
-                items:1,
-                center: true, 
-            },
-            450:{
-                items:1.5,
-                center: true, 
-            },
-            600:{
-                items:2,
-            },
-            1000:{
-                items:3,
-            }
-        }
-    })
-
     const sections = document.querySelectorAll(".secpad");
     const menuLinks = document.querySelectorAll("#nav ul li a");
 
