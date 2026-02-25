@@ -27,6 +27,11 @@ $(document).ready(function(){
         $('.sideMenu').removeClass('show');
         $('.drawer-overlay').removeClass('show');
     });
+    $('#nav').on('click', 'ul li a', function () {
+        $("#header").css("overflow", "hidden");
+        $('.sideMenu').removeClass('show');
+        $('.drawer-overlay').removeClass('show');
+    });
 
     const sections = document.querySelectorAll(".secpad");
     const menuLinks = document.querySelectorAll("#nav ul li a");
@@ -47,12 +52,10 @@ $(document).ready(function(){
         });
         },
         {
-        threshold: 0.7
+        threshold: 0.6
         }
     );
 
     sections.forEach(section => observer.observe(section));
-
-    observer.observe(target);
 
 });
