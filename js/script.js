@@ -58,4 +58,16 @@ $(document).ready(function(){
 
     sections.forEach(section => observer.observe(section));
 
+    const hoverImg = new Image();
+    hoverImg.src = "images/hero-pic.JPG";
+
+    $(".aboutme_info").hover(
+    function () {
+        $(this).find('img').attr("src", hoverImg.src);
+    },
+    function () {
+        $(this).find('img').attr('src', 'images/heroPic.png');
+    }
+    );
+
 });
