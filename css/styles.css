@@ -113,7 +113,7 @@ body {
   z-index: 5;
   padding: 2rem;
   background: var(--glass-bg);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -172,8 +172,8 @@ h4 {
 
 p {
     font-size: 1rem;  
-    line-height: 1.6; 
-     margin-bottom: 1.2rem;
+    line-height: 1.5; 
+    margin-bottom: 1.2rem;
 }
 
 .cyan {
@@ -395,13 +395,13 @@ p {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 1.2rem;
 }
 
 .why-card {
   background: var(--glass-bg);
-  border-radius: 18px;
+  border-radius: 1rem;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -545,33 +545,88 @@ p {
 .webcard {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 1.5rem;
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.portfolio-card:hover{
+  transform: translateY(-10px);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 44, 191, 0.1));
+  opacity: 0;
+ transition: opacity 0.4s ease;
+  z-index: 0;
+}
+.portfolio-card:hover::before {
+  opacity: 1;
+}
+
+.browser-mockup {
+  position: relative;
+  background: linear-gradient(180deg, #1e1e2e 0%, #16162a 100%);
+}
+
+.browser-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   gap: 1rem;
 }
 
-.webcard .item {
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 1rem;
-  height: fit-content;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+.browser-dots .dot {width: 10px; height: 10px; border-radius: 50%;}
+.dot-red {background: #ff5f57;}
+.dot-yellow {background: #ffbd2e;}
+.dot-green {background: #28ca42;}
+
+.browser-address {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-family: var(--sec-font);
 }
 
-.webcard .item img {
+.web-image {
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: top;
 }
 
-.webcard .item section {
-  padding: 2rem 1rem;
-  text-align: center;
+.card-content {
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.webcard .item section i {  
-  margin-right: 0.5rem;
-  font-style: normal;
+.card-description {
+  color: var(--color-dim);
 }
+
 
 /* FOOTER */
 
