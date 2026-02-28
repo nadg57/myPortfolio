@@ -54,7 +54,7 @@ body {
   font-size: 1rem; 
   max-width: 1920px;
   margin: 0 auto;
-  background: linear-gradient(135deg,#020205 0,#0a0818 50%,#050510 100%);
+  background: linear-gradient( 135deg, #06060c 0%, #121028 50%, #0a0a18 100% );
 }
 
 /* Animated background particles */
