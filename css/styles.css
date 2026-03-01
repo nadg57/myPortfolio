@@ -57,43 +57,61 @@ body {
   background: linear-gradient( 135deg, #06060c 0%, #121028 50%, #0a0a18 100% );
 }
 
-/* Animated background particles */
+/* BACKGROUND CONTAINER */
 .bg-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: rgba(0, 212, 255, 0.4);
-    border-radius: 50%;
-    animation: float 20s infinite linear;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+/* BUBBLES */
+.bubble {
+  position: absolute;
+  bottom: -15%;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,255,255,.95),
+    rgba(0,212,255,.6),
+    rgba(0,212,255,.15)
+  );
+  filter:
+    drop-shadow(0 0 8px rgba(0,212,255,.5))
+    drop-shadow(0 0 16px rgba(0,212,255,.35));
+  animation:
+    bubbleFloat linear infinite,
+    glowPulse ease-in-out infinite;
+  transition: filter .25s ease;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(720deg);
-        opacity: 0;
-    }
+/* FLOAT */
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(.6);
+    opacity: 0;
+  }
+  10% { opacity: .9; }
+  100% {
+    transform: translateY(-120vh) translateX(var(--drift)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* IDLE GLOW */
+@keyframes glowPulse {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 6px rgba(0,212,255,.4))
+      drop-shadow(0 0 14px rgba(0,212,255,.25));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 10px rgba(0,212,255,.7))
+      drop-shadow(0 0 24px rgba(0,212,255,.45));
+  }
 }
 
 /* WRAPPER */
@@ -133,6 +151,7 @@ h1, h2, h3, h4 {
     margin-bottom: 16px;
     line-height: 1.2;
     text-shadow: 0 0 30px rgba(124,254,255,.2);
+    
 }
 
 h1 {
@@ -157,7 +176,7 @@ h2 {
   background: linear-gradient(to bottom, #4fc3f7, #7c4dff);
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 0 20px var(--glow-cyan);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
 }
 
@@ -538,6 +557,8 @@ p {
 
 .techSkill li section h4 span {
   float: right;
+  font-size: 0.7rem;
+  line-height: 1rem;
 }
 
 .techSkill li section .percent {
@@ -576,6 +597,9 @@ p {
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .portfolio-card:hover{
   transform: translateY(-10px);
@@ -641,10 +665,47 @@ p {
   padding: 2rem 1.5rem;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 
-.card-description {
+.portfolio-card:hover .card-title {
+  color: #8fe3ff;
+}
+
+.card-content p {
   color: var(--color-dim);
+  margin-bottom: 1.2rem;
+}
+
+.card-content .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: auto 0 1.2rem;
+}
+
+.card-content .tags li {
+  padding: .4rem .9rem;
+  font-size: .6rem;
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 999px;
+  color: #9fd7ff;
+  background: transparent;
+  border: 1px solid rgba(79,195,247,.6);
+  transition: all .4s cubic-bezier(.4,0,.2,1)
+}
+.portfolio-card:hover .card-content .tags li {
+  color: var(--color-main);
+  border-color: #7c4dff;
+ /* box-shadow: 0 0 12px rgba(124,77,255,.6); */
+}
+
+.card-content a.btn {
+  width: 100%;
 }
 
 
