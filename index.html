@@ -15,7 +15,7 @@
     <!-- Background Animation -->
     <div class="bg-animation" id="bgAnimation"></div>
 
-    <header id="header" class="secpad">
+    <header id="header" class="secpad secHighlight">
         <div class="wrapper">
             <div class="header_con">
                 <a href="#"><img class="main-logo" src="images/nag-logo.svg" alt="NAG Logo"></a>
@@ -24,11 +24,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6l-12 12" />
                     </svg>
                     <ul>
-                        <li><a href="#aboutme">About</a></li>
-                        <li><a href="#hireMe">Hire Me</a></li>
-                        <li><a href="#work-experience">Work</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a class="btn" href="">Let’s Talk</a></li>
+                        <li><a href="#aboutme" data-target="aboutme">About</a></li>
+                        <li><a href="#hireMe" data-target="hireMe">Hire Me</a></li>
+                        <li><a href="#work" data-target="work">Work</a></li>
+                        <li><a class="btn" href="#contact" data-target="contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="burger">
@@ -41,7 +40,7 @@
         </div>
     </header>
 
-    <div id="aboutme" class="secpad scrollMiniMargin">
+    <div id="aboutme" class="secpad scrollMiniMargin secHighlight">
         <div class="wrapper">
             <div class="glass-box">
                 <div class="aboutme_con">
@@ -109,8 +108,8 @@
             </div>  
         </div>
     </div>
-
-    <div id="hireMe" class="secpad scrollMargin">
+    
+    <div id="hireMe" class="secpad scrollMargin secHighlight">
         <div class="wrapper">
             <div class="hireMe_con">
 
@@ -159,149 +158,151 @@
         </div>
     </div>
 
-    <div id="work-experience" class="secpad scrollMargin">
-        <div class="wrapper">
-            <div class="work_con">
-                <h2 class="hdr">Work <span class="cyan">Experience</span></h2>
-                <div class="company-box glass-box boxHover">
-                    <div class="company-info">
-                        <img src="images/company/proweaver_logo.svg" alt="Proweaver, Inc.">
-                        <h3>Proweaver, Inc.</h3>
-                        <span>Front-end Web Developer</span>
-                        <p class="dim"><small>Cebu City, Cebu</small></p>
-                        <div class="company-info-yr dim"><small>April 2022 - Present</small></div>
-                    </div>
-                    <p class="dim">Responsible for converting design layouts into fully functional website pages, maintaining and continuously improving websites, and accurately interpreting and implementing client instructions. Collaborates closely with team members and stakeholders to ensure project goals are met, resolves website issues and bugs efficiently, and adheres to company standards and policies. Also handles online form conversions, performs malware checks, and integrates secure payment gateways such as PayPal, Stripe, and Square.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="work-experience" class="secpad scrollMargin">
-        <div class="wrapper">
-            <div class="bottom_con">
-                <h2 class="hdr">Work <span class="cyan">Contributions</span></h2>
-                <div class="webcard">
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+    <div id="work" class="scrollMargin secHighlight">
+        <div id="work-experience" class="secpad">
+            <div class="wrapper">
+                <div class="work_con">
+                    <h2 class="hdr">Work <span class="cyan">Experience</span></h2>
+                    <div class="company-box glass-box boxHover">
+                        <div class="company-info">
+                            <img src="images/company/proweaver_logo.svg" alt="Proweaver, Inc.">
+                            <h3>Proweaver, Inc.</h3>
+                            <span>Front-end Web Developer</span>
+                            <p class="dim"><small>Cebu City, Cebu</small></p>
+                            <div class="company-info-yr dim"><small>April 2022 - Present</small></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="glow"></div>
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <div class="browser-address">domain.com</div>
-                            </div>
-                            <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Website Title 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
-                            <a href="#" class="btn">👁️ View Site</a>
-                        </div>
+                        <p class="dim">Responsible for converting design layouts into fully functional website pages, maintaining and continuously improving websites, and accurately interpreting and implementing client instructions. Collaborates closely with team members and stakeholders to ensure project goals are met, resolves website issues and bugs efficiently, and adheres to company standards and policies. Also handles online form conversions, performs malware checks, and integrates secure payment gateways such as PayPal, Stripe, and Square.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer id="contact" class="secpad scrollMargin">
+        <div id="work-experience" class="secpad scrollMargin">
+            <div class="wrapper">
+                <div class="bottom_con">
+                    <h2 class="hdr">Work <span class="cyan">Contributions</span></h2>
+                    <div class="webcard">
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">welovedynamictherapy.com</div>
+                                </div>
+                                <img src="images/web/web1.png" alt="Dynamic Therapy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Dynamic Therapy</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="https://welovedynamictherapy.com/" class="btn" target="_blank">👁️ View Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">domain.com</div>
+                                </div>
+                                <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Website Title 1</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="#" class="btn">👁️ View Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">domain.com</div>
+                                </div>
+                                <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Website Title 1</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="#" class="btn">👁️ View Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">domain.com</div>
+                                </div>
+                                <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Website Title 1</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="#" class="btn">👁️ View Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">domain.com</div>
+                                </div>
+                                <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Website Title 1</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="#" class="btn">👁️ View Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="glow"></div>
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot dot-red"></div>
+                                        <div class="dot dot-yellow"></div>
+                                        <div class="dot dot-green"></div>
+                                    </div>
+                                    <div class="browser-address">domain.com</div>
+                                </div>
+                                <img src="images/web/dummy1.jpg" alt="dummy" class="web-image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Website Title 1</h3>
+                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, possimus? Discover innovative solutions for modern payment processing.</p>
+                                <a href="#" class="btn">👁️ View Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contact" class="secpad scrollMargin secHighlight">
         <div class="footer_top">
             <div class="wrapper">
                 <div id="contact_con" class="footer_top_con glass-box">

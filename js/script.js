@@ -33,41 +33,40 @@ $(document).ready(function(){
         $('.drawer-overlay').removeClass('show');
     });
 
-    const sections = document.querySelectorAll(".secpad");
-    const menuLinks = document.querySelectorAll("#nav ul li a");
+    $(window).on("scroll", function () {
+        let scrollTop = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        let viewportCenter = scrollTop + windowHeight / 2;
 
-    const observer = new IntersectionObserver(
-        entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            const id = entry.target.id;
+        let activeId = null;
 
-            menuLinks.forEach(link => {
-                link.classList.toggle(
-                "is-active",
-                link.getAttribute("href") === `#${id}`
-                );
-            });
+        $(".secHighlight").each(function () {
+            let $el = $(this);
+            let top = $el.offset().top;
+            let bottom = top + $el.outerHeight();
+
+            if (viewportCenter >= top && viewportCenter <= bottom) {
+                activeId = $el.attr("id");
+                return false; // stop loop once found
             }
         });
-        },
-        {
-        threshold: 0.6
+
+        if (activeId) {
+            $("#nav ul li a").removeClass("is-active");
+            $('#nav ul li a[data-target="' + activeId + '"]').addClass("is-active");
         }
-    );
+    });
 
-    sections.forEach(section => observer.observe(section));
-
-    const hoverImg = new Image();
+    /* const hoverImg = new Image();
     hoverImg.src = "images/hero-pic.JPG";
 
-    $(".aboutme_info").hover(
+     $(".aboutme_info").hover(
     function () {
         $(this).find('img').attr("src", hoverImg.src);
     },
     function () {
         $(this).find('img').attr('src', 'images/heroPic.png');
     }
-    );
+    ); */
 
 });

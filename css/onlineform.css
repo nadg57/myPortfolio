@@ -47,6 +47,12 @@
   outline: none;
 }
 
+.input-group input:focus,
+.input-group textarea:focus {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to bottom, #4fc3f7, #7c4dff) 1;
+}
+
 .input-group label {
   position: absolute;
   top: 50%;
