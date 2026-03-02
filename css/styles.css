@@ -57,61 +57,12 @@ body {
   background: linear-gradient( 135deg, #06060c 0%, #121028 50%, #0a0a18 100% );
 }
 
-/* BACKGROUND CONTAINER */
-.bg-animation {
+/* CANVAS BACKGROUND */
+#bubbleCanvas {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
-}
-
-/* BUBBLES */
-.bubble {
-  position: absolute;
-  bottom: -15%;
-  border-radius: 50%;
-  opacity: 0;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(255,255,255,.95),
-    rgba(0,212,255,.6),
-    rgba(0,212,255,.15)
-  );
-  filter:
-    drop-shadow(0 0 8px rgba(0,212,255,.5))
-    drop-shadow(0 0 16px rgba(0,212,255,.35));
-  animation:
-    bubbleFloat linear infinite,
-    glowPulse ease-in-out infinite;
-  transition: filter .25s ease;
-}
-
-/* FLOAT */
-@keyframes bubbleFloat {
-  0% {
-    transform: translateY(0) translateX(0) scale(.6);
-    opacity: 0;
-  }
-  10% { opacity: .9; }
-  100% {
-    transform: translateY(-120vh) translateX(var(--drift)) scale(1.2);
-    opacity: 0;
-  }
-}
-
-/* IDLE GLOW */
-@keyframes glowPulse {
-  0%, 100% {
-    filter:
-      drop-shadow(0 0 6px rgba(0,212,255,.4))
-      drop-shadow(0 0 14px rgba(0,212,255,.25));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 10px rgba(0,212,255,.7))
-      drop-shadow(0 0 24px rgba(0,212,255,.45));
-  }
 }
 
 /* WRAPPER */

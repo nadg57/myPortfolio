@@ -13,7 +13,7 @@
 <body>
 
     <!-- Background Animation -->
-    <div class="bg-animation" id="bgAnimation"></div>
+    <canvas id="bubbleCanvas"></canvas>
 
     <header id="header" class="secpad secHighlight">
         <div class="wrapper">
@@ -338,28 +338,93 @@
     <script src="js/jquery.min.js"></script>
 
     <script>
-        const bgAnimation = document.getElementById("bgAnimation");
-        const bubbleCount = 70;
+        const canvas = document.getElementById("bubbleCanvas");
+        const ctx = canvas.getContext("2d");
 
-        for (let i = 0; i < bubbleCount; i++) {
-        const bubble = document.createElement("div");
-        bubble.className = "bubble";
+        let width, height, bubbles = [];
+        let running = true;
 
-        const size = Math.random() * 14 + 5;
-        bubble.style.width = size + "px";
-        bubble.style.height = size + "px";
-
-        bubble.style.left = Math.random() * 100 + "%";
-        bubble.style.animationDuration = Math.random() * 18 + 18 + "s";
-        bubble.style.animationDelay = Math.random() * 20 + "s";
-
-        bubble.style.setProperty(
-            "--drift",
-            `${(Math.random() - 0.5) * 220}px`
-        );
-
-        bgAnimation.appendChild(bubble);
+        /* DPI SAFE */
+        function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        width = canvas.width = window.innerWidth * dpr;
+        height = canvas.height = window.innerHeight * dpr;
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         }
+        window.addEventListener("resize", resize);
+        resize();
+
+        /* BUBBLE CLASS */
+        class Bubble {
+        constructor() {
+            this.reset();
+            this.y = height + Math.random() * height;
+        }
+
+        reset() {
+            this.radius = Math.random() * 8 + 4;
+            this.x = Math.random() * width;
+            this.y = height + this.radius;
+            this.speed = Math.random() * 0.4 + 0.2;
+            this.drift = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.5 + 0.3;
+            this.hue = Math.random() * 40 + 190; // cyan → purple
+        }
+
+        update() {
+            this.y -= this.speed;
+            this.x += this.drift;
+
+            if (this.y + this.radius < 0) {
+            this.reset();
+            }
+        }
+
+        draw() {
+            const grad = ctx.createRadialGradient(
+            this.x, this.y, this.radius * 0.2,
+            this.x, this.y, this.radius * 2.5
+            );
+
+            grad.addColorStop(0, `hsla(${this.hue}, 100%, 85%, ${this.alpha})`);
+            grad.addColorStop(0.4, `hsla(${this.hue}, 90%, 60%, ${this.alpha * 0.8})`);
+            grad.addColorStop(1, "transparent");
+
+            ctx.beginPath();
+            ctx.fillStyle = grad;
+            ctx.arc(this.x, this.y, this.radius * 2.5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        }
+
+        /* CREATE BUBBLES (ADAPTIVE) */
+        const bubbleCount = window.innerWidth < 768 ? 35 : 55;
+        for (let i = 0; i < bubbleCount; i++) {
+        bubbles.push(new Bubble());
+        }
+
+        /* ANIMATION LOOP */
+        function animate() {
+        if (!running) return;
+
+        ctx.clearRect(0, 0, width, height);
+
+        for (const bubble of bubbles) {
+            bubble.update();
+            bubble.draw();
+        }
+
+        requestAnimationFrame(animate);
+        }
+        animate();
+
+        /* PAUSE WHEN TAB HIDDEN */
+        document.addEventListener("visibilitychange", () => {
+        running = !document.hidden;
+        if (running) animate();
+        });
     </script>
     
 </body>
