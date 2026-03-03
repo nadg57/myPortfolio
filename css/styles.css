@@ -15,7 +15,7 @@
     --glow-blue: rgba(59, 130, 246);
 
     --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-bg: linear-gradient( 135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100% );
     
 }
 
@@ -54,7 +54,10 @@ body {
   font-size: 1rem; 
   max-width: 1920px;
   margin: 0 auto;
-  background: linear-gradient( 135deg, #06060c 0%, #121028 50%, #0a0a18 100% );
+  background-color: #0a0a0f;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  min-height: 100vh;
 }
 
 /* CANVAS BACKGROUND */
@@ -83,10 +86,10 @@ body {
   padding: 2rem;
   background: var(--glass-bg);
   border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .scrollMiniMargin {
@@ -160,8 +163,9 @@ p {
 }
 .boxHover:hover {
   transform: scale(1.02);
-  border-color: rgba(163, 129, 255, 0.3);
-  box-shadow: 0 0 8px rgba(163, 129, 255, 0.25), 0 0 20px rgba(163, 129, 255, 0.15);
+  border-color: rgba(124, 92, 255, 0.45);
+  background: linear-gradient( 135deg, rgba(168, 85, 247, 0.12), rgba(123, 44, 191, 0.12) );
+  box-shadow: 0 10px 20px rgba(124, 92, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.25), 0 0 0 1px rgba(124, 92, 255, 0.35);
 }
 
 /* BUTTONS */
@@ -195,13 +199,12 @@ p {
   z-index: 99;
   top: 0;
   padding: 15px 0;
-  transition: background .3s ease;
   overflow: hidden;
   position: sticky;
-  background: rgba(0,0,0,.8);
+  background: rgba(6,6,12,.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(228,222,210,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .header_con {
@@ -344,8 +347,14 @@ p {
   background: rgba(0,0,0,.2);
   width: fit-content;
   border-radius: 5rem;
-  border: 1px solid var(--glass-border);
   margin-top: 1.2rem;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  background: linear-gradient( 135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100% );
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-image: linear-gradient( 110deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60% );
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .aboutme_con .aboutme_info a.btn {
@@ -394,11 +403,14 @@ p {
   border-radius: 1rem;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid var(--glass-border);
+  background: #11111a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .why-card:hover {
-  box-shadow: rgba(255,255,255,.08) 0 0 10px;
   transform: translateY(-6px);
   background: rgba(0,0,0,.15);
 }
